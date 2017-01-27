@@ -15,9 +15,9 @@ There can be multiple sources and targets if the TCP nukleus is being used in co
 
 ## Internal architecture
 
-- Conductor: read control commands, hands to router
-- Router: manages routing table
-- Watcher: watches for new or deleted streams files so it can detect new streams files (created route command to another nukleus that writes to this) and tell the Router about them so it can route new streams. (TODO: deleted is not done yet, no-one deletes them) 
+- Conductor: reads control commands, hands to router
+- Router: manages the routing table
+- Watcher: watches for new or deleted streams files so it can detect new streams files (created route command to another nukleus that writes to this) and tell the Router about them so it can route new streams. **TODO: handling deleted files is not done yet, no-one deletes them** 
 - reader package:
   - Reader: reads all of its sources (only one for tcp), routes and writes to its targets
   - Source: reading from network (would be a streams file for non-tcp)
